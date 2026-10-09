@@ -1,13 +1,20 @@
 # Homelab Infrastructure
 
-This repository documents a Proxmox-based homelab and selected systems administration work across virtualization, self-hosted services, backup operations, and home automation.
+This is where I document the homelab I've been building and the projects I've worked on along the way. It runs on Proxmox VE and gives me a place to work with virtualization, Linux, self-hosted services, storage, and infrastructure automation outside of work.
 
-## Highlights
+## What I'm working with
 
-- **Virtualization:** Proxmox VE hosts several Linux and application VMs.
-- **Backup operations:** A systemd workflow on Proxmox starts a separate Proxmox Backup Server through iDRAC, runs VM backups, verifies the resulting snapshots, and shuts the server down after success. On failure, it leaves the server available for troubleshooting.
-- **Home automation:** Home Assistant and Matter Server run in Docker on a dedicated VM.
+- **Virtualization:** Proxmox VE and Debian virtual machines
+- **Backups:** Proxmox Backup Server with automated power management and backup verification
+- **Self-hosted services:** Docker, Home Assistant, Nextcloud, and Matter Server
+- **Automation:** Bash/Python scripts and systemd services
 
-The backup workflow completed successfully in a live run on 2026-10-07. Its source is in [`scripts/`](scripts/), with the scheduled and manual systemd units in [`systemd/`](systemd/).
+## Projects
 
-Operational notes are in [`handover/`](handover/). They record implementation details and history; service state can change over time.
+- [Virtualization](virtualization.md) — Proxmox, virtual machines, and the templates I've built.
+- [Storage](storage.md) — Storage configuration and backup infrastructure.
+- [Backup Automation](backup-automation.md) — Automating the backup process, from powering on the backup server to verifying snapshots and handling failures.
+- [Home Automation](home-automation.md) — Home Assistant, Docker, and Matter.
+- [Servers](servers.md) — The game servers and other services I run and maintain.
+
+I use this repository to keep track of how things are configured, why I made certain decisions, and what I've learned when things don't go as planned. It's an ongoing project, so the documentation will grow as the homelab does.
