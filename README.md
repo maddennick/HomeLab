@@ -13,7 +13,7 @@ This is where I document the homelab I've been building and the projects I've wo
 
 - [Virtualization](virtualization.md) — Proxmox, virtual machines, and the templates I've built.
 - [Storage](storage.md) — Storage configuration and backup infrastructure.
-- - [Planned Network Overhaul](planned-networking.md) — Plans for firewalling, VLAN segmentation, managed switching, and Wi-Fi 7.
+- [Planned Network Overhaul](planned-networking.md) — Plans for firewalling, VLAN segmentation, managed switching, and Wi-Fi 7.
 - [Backup Automation](backup-automation.md) — Automating the backup process, from powering on the backup server to verifying snapshots and handling failures.
 - [Home Automation](home-automation.md) — Home Assistant, Docker, and Matter.
 - [Servers](servers.md) — The game servers and other services I run and maintain.
