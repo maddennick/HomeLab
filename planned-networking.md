@@ -48,8 +48,6 @@ The exact migration and storage setup still needs to be decided. Local storage, 
 
 ## Hardware and Design Decisions
 
-## Hardware and Design Decisions
-
 The main decisions still to be finalized are the managed switch, OPNsense hardware and network interfaces, and Wi-Fi 7 access point.
 
 I'm also considering a second Proxmox node with 10Gb networking to make planned maintenance and VM recovery easier. Storage and migration options will need to be evaluated before choosing the hardware.
