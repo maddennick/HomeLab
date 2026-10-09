@@ -1,24 +1,26 @@
 # Server Inventory
 
-High-level inventory of the systems relevant to this portfolio.
+A quick overview of the physical systems and virtual machines that make up my homelab.
 
-| System | Role | Verified details |
+## Physical Systems and Services
+
+| System | Purpose | Details |
 |---|---|---|
-| `Host2` | Proxmox VE host | PVE 9.2.20; hosts five VMs |
-| `backup` | Proxmox Backup Server | Dell PowerEdge R440; PBS 4.2.6 last checked 2026-09-27 |
-| iDRAC | Out-of-band management | Controls PBS power for the backup workflow |
-| `HomeServer` | Home automation and Linux services | Debian GNU/Linux 13.5 VM running Home Assistant and Matter Server |
+| `Host2` | Proxmox VE host | Runs Proxmox VE 9.2.20 and hosts five VMs. |
+| `backup` | Backup server | Dell PowerEdge R440 running Proxmox Backup Server. |
+| iDRAC | Remote management | Used to power the backup server on and off for automated backups. |
+| `HomeServer` | Home automation | Debian 13 VM running Home Assistant and Matter Server. |
 
-## Virtual machines
+## Virtual Machines
 
-Guest names and states were checked on 2026-10-07.
-
-| ID | Name | State |
+| VM ID | Name | Purpose / State |
 |---:|---|---|
-| 100 | GTNH | Running |
-| 101 | HomeServer | Running |
-| 102 | DebianTemplate | Stopped template |
-| 103 | Valheim | Running |
-| 104 | Dev | Running |
+| 100 | GTNH | Running game server |
+| 101 | HomeServer | Running home automation services |
+| 102 | DebianTemplate | Stopped; used as a VM template |
+| 103 | Valheim | Running game server |
+| 104 | Dev | Running development VM |
 
-The scheduled backup workflow covers VMs 100, 101, 103, and 104. The template is excluded.
+The backup workflow covers VMs 100, 101, 103, and 104. The Debian template is excluded.
+
+See [Virtualization](virtualization.md) for the Proxmox overview, [Storage](storage.md) for the storage layout, and [Backup Automation](backup-automation.md) for how the backup process works.
