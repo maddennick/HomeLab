@@ -1,6 +1,6 @@
 # Homelab Infrastructure
 
-This is where I document the homelab I've been building and the projects I've worked on along the way. It runs on Proxmox VE and gives me a place to work with virtualization, Linux, self-hosted services, storage, and infrastructure automation outside of work.
+This is where I document the homelab I've been building and the projects I've worked on along the way. It runs on Proxmox VE and gives me a place to work with virtualization, Linux, self-hosted services, storage, and infrastructure automation outside of work. One of my main projects is automating my backup workflow, including remotely powering on my backup server, verifying snapshots, and shutting it down when the job completes successfully.
 
 ## What I'm working with
 
