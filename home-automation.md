@@ -1,11 +1,16 @@
 # Home Automation
 
-Home Assistant and Matter Server run as Docker Compose services on the `HomeServer` Debian VM.
+Home Assistant runs in Docker on my dedicated Debian VM, `HomeServer` (VM 101), hosted on Proxmox. I use it to manage smart home devices, build automations, and experiment with integrations.
 
-- Home Assistant provides integrations, device automation, and notifications.
-- Matter Server provides a local WebSocket endpoint at `ws://localhost:5580/ws`.
-- Configuration and Matter data persist on the VM.
+## How it's set up
 
-On 2026-10-07, the Home Assistant container was running and its local HTTP endpoint returned `200`. Matter Server was running; a recent peer subscription timeout recovered through re-subscription. Device-level health was not checked.
+- **Home Assistant:** The central hub for device integrations, automations, and notifications.
+- **Zigbee:** My primary focus for connecting smart home devices. I use a USB coordinator and have been expanding the network with Zigbee smart plugs to improve coverage and reliability.
+- **Matter Server:** Runs as a separate Docker container alongside Home Assistant.
+- **Docker Compose:** Manages the services on the Debian VM, with configuration and application data persisted on the VM.
 
-See the [Home Assistant](../handover/homeassistant-docker-handoff.md) and [Matter Server](../handover/homeassistant-matter-server-handoff.md) handovers for basic operating notes.
+## Ongoing work
+
+I've been working on improving Zigbee network reliability and expanding device coverage around my apartment. This includes adding smart plugs to strengthen the mesh and troubleshooting devices that don't reliably connect.
+
+I also use this setup to experiment with Home Assistant integrations and remote access while keeping the services hosted locally in my homelab.
