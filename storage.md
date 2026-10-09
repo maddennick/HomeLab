@@ -1,12 +1,24 @@
 # Storage Overview
 
-Proxmox uses multiple storage types to support virtual machine disks and local data:
+Storage in my homelab is split between my custom-built Proxmox host and a dedicated Dell PowerEdge R440 running Proxmox Backup Server.
 
-- **ZFS:** pool `tank`, reported online during the 2026-10-07 review.
-- **LVM-thin:** local pools named `local-lvm` and `nvme`.
-- **Directory storage:** `local` and `NonZFSHDD`.
-- **Backup storage:** remote PBS datastore `pbs-backup` on the Dell R440.
+## Proxmox Host
 
-The R440 uses a user-confirmed hardware RAID 10 controller. PBS previously reported an ext4 filesystem on an LVM virtual block device, with its datastore under `/backup` (verified 2026-09-27).
+My custom-built server runs Proxmox VE and uses three local storage resources:
 
-The physical disk layout behind Proxmox storage and the ZFS vdev topology are not documented. Pool health alone does not establish redundancy.
+- **`tank`** — ZFS pool on the Proxmox host.
+- **`nvme`** — Fast local storage for workloads that benefit from NVMe performance.
+- **`NonZFSHDD`** — Additional HDD storage, currently unused.
+
+These resources are part of the virtualization host and are separate from the backup server.
+
+## Backup Server
+
+The Dell PowerEdge R440 runs Proxmox Backup Server and provides dedicated storage for VM backups.
+
+- **Datastore:** `pbs-backup`
+- **Filesystem:** ext4
+- **Mount point:** `/backup`
+- **Underlying storage:** LVM virtual block device, with a hardware RAID 10 controller reported on the server.
+
+See [Backup Automation](backup-automation.md) for how the backup server is powered on, used for backups, and shut down after successful completion.
