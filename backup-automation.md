@@ -19,6 +19,8 @@ The workflow is written in Python and runs on the Proxmox VE host, with systemd 
 
 The workflow completed a successful live run on October 7, 2026.
 
+On October 10, 2026, I restored the GTNH server from a PBS snapshot to a new VM (ID 105) and verified SSH access. This confirmed that the backup could be restored without overwriting the original VM.
+
 ## Development notes
 
 I used Codex to help write and refine the Python script. I focused on the problem I wanted to solve, how the workflow should behave, and the safeguards needed to avoid leaving backups incomplete or shutting down the server after a failure. I then tested the workflow in my own environment and refined it along the way.
